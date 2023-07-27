@@ -4,9 +4,7 @@ import pandas as pd
 import numpy as np
 from tqdm.notebook import tqdm
 from torch.utils.data import Dataset, DataLoader, random_split
-from torchtext.legacy.data import BucketIterator
 import torch
-from globalVars import *
 from configs import *
 from random import randrange, shuffle, random, randint
 
@@ -19,8 +17,6 @@ batch_size = 32
 channels = []
 #prepare the input data
 for channelNo in range(noChannels):
-    channelNo = 1 #TODO: workaround
-
     #centres
     closest_centres_file = os.path.join(absolute_root, 'BoW', 'closest_centres', dataset, f'closest_centres_s{sub_length}_i{inter_point}_ch{channelNo}.pkl')
     with open(closest_centres_file, 'rb') as f:
@@ -204,5 +200,3 @@ for tokenKey in special_tokens_dict.keys():
 tokens_list.extend(list(range(4, len(centroids)+4)))
 
 batch = make_transformer_batch(whole_dataset, special_tokens_dict, tokens_list, max_pred, batch_size)
-
-print()

@@ -9,7 +9,7 @@ from BENDRmain.misc import *
 from memory_profiler import profile
 import functools
 
-print('do_representation accessed2')
+print('do_representation accessed')
 #from BoW.configs import *
 
 '''

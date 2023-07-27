@@ -59,23 +59,6 @@ def _prepare_session(raw, tlen, decimate, desired_sfreq, desired_samples, picks,
         if not any([fnmatch(raw.ch_names[idx], "*FPZ*") for idx in range(len(raw.ch_names))]):
              ch_selection.append("*FZ*")
         picks = ([idx for idx in picks if True in [fnmatch(raw.ch_names[idx], pattern) for pattern in ch_selection]])
-        #picks = ([idx for idx in picks if True in [fnmatch(raw.ch_names[idx], pattern)
-        #                                           for pattern in ch_selection]])
-        # Exclude channel index by pattern match
-        #picks = ([idx for idx in picks if True not in [fnmatch(raw.ch_names[idx], pattern)
-        #                                               for pattern in exclude_channels]])
-
-        # Rename channels
-        #renaming_map = dict()
-        #for new_ch, pattern in rename_channels.items():
-        #    for old_ch in [raw.ch_names[idx] for idx in picks if fnmatch(raw.ch_names[idx], pattern)]:
-        #        renaming_map[old_ch] = new_ch
-        #try:
-        #        raw = raw.rename_channels(renaming_map)
-        #except ValueError as e:
-        #    print("Error renaming channels from session: ", raw.filenames[0])
-        #    print("Failed to rename ", raw.ch_names, " using ", renaming_map)
-        #    print("Skipping channel name issue.")
 
         tlen = desired_samples / new_sfreq if tlen is None else tlen
 

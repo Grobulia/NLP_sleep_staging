@@ -3,7 +3,6 @@ import pandas
 import pandas as pd
 import numpy as np
 import pywt as pywt
-from configs import *
 import pickle
 from BENDRmain.misc import * 
 #from BoW.configs import *
