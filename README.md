@@ -7,6 +7,7 @@ This document contains the instructions on how to run the codebase for the Maste
 The goal of the thesis was to use the BERT model on EEG data tokenised with the Bag-of-Words method (Wang et al., 2013) for the purpose of sleep-stage classification. A multilayer perceptron trained on the same data, as well as two networks from the literature - BENDR (Kostas et al., 2021) and CatBoost (Donckt et al., 2022) were used for comparison. One dataset was used for pretraining and one for the classification task. The repository has the following structure:
 
 BENDR
+|
 ├── BENDRMain                    
 │   ├── BoW          
 │   ├── configs         
